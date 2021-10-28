@@ -72,10 +72,9 @@ namespace PokemonApp
                             {
                                 //Parse your data into an object.
                                 var dataObj = JObject.Parse(data);
-                                PokeItem pokeItem = new PokeItem(name: $"{dataObj["name"]}", id: $"{dataObj["id"]}", height: $"{dataObj["height"]}", weight: $"{dataObj["weight"]}");
+                                PokeItem pokeItem = new PokeItem(name: $"{dataObj["name"]}", id: $"{dataObj["id"]}", ability: $"{dataObj["abilities"][0]["ability"]["name"]}", height: $"{dataObj["height"]}", weight: $"{dataObj["weight"]}");
                                 //Print pokeItem's name to console
-                                Console.WriteLine("Pokemon Name: {0}, id: {1}, height: {2}, weight: {3}", pokeItem.Name, pokeItem.ID, pokeItem.Height, pokeItem.Weight);
-                               // Console.WriteLine("Ability: {0}", pokeItem.Ability);
+                                Console.WriteLine("Pokemon Name: {0}, id: {1}, ability: {2}, height: {3}, weight: {4}", pokeItem.Name, pokeItem.ID, pokeItem.Ability, pokeItem.Height, pokeItem.Weight);
                             }
                             else
                             {
